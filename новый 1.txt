@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class PrimitiveInfo {
+
+    public static void main(String[] args) {
+        // Виведення інформації про примітивні типи даних
+        printPrimitiveInfo();
+
+        // Створюємо об'єкт Scanner для зчитування введення користувача
+        Scanner scanner = new Scanner(System.in);
+
+        // Запитуємо у користувача ввести значення для різних типів даних
+        System.out.print("Введіть ціле число (int): ");
+        String intInput = scanner.nextLine();
+        int intValue = Integer.parseInt(intInput);
+        System.out.println("Ви ввели ціле число: " + intValue);
+
+        System.out.print("Введіть число з плаваючою комою (double): ");
+        String doubleInput = scanner.nextLine();
+        double doubleValue = Double.parseDouble(doubleInput);
+        System.out.println("Ви ввели число з плаваючою комою: " + doubleValue);
+
+        System.out.print("Введіть логічне значення (boolean): ");
+        String booleanInput = scanner.nextLine();
+        boolean booleanValue = Boolean.parseBoolean(booleanInput);
+        System.out.println("Ви ввели логічне значення: " + booleanValue);
+
+        System.out.print("Введіть символ (char): ");
+        String charInput = scanner.nextLine();
+        char charValue = charInput.charAt(0); // Беремо перший символ зі строки
+        System.out.println("Ви ввели символ: " + charValue);
+
+        // Закриваємо сканер
+        scanner.close();
+    }
+
+    // Метод для виведення інформації про примітивні типи даних
+    private static void printPrimitiveInfo() {
+        System.out.println("Примітивні типи даних у Java:");
+        System.out.println("int: Розмір = " + Integer.BYTES + " байт, Мінімальне значення = " + Integer.MIN_VALUE + ", Максимальне значення = " + Integer.MAX_VALUE);
+        System.out.println("double: Розмір = " + Double.BYTES + " байт, Мінімальне значення = " + Double.MIN_VALUE + ", Максимальне значення = " + Double.MAX_VALUE);
+        System.out.println("boolean: Розмір = " + "1 біт" + ", Значення = true або false");
+        System.out.println("char: Розмір = " + Character.BYTES + " байт, Мінімальне значення = " + (int) Character.MIN_VALUE + ", Максимальне значення = " + (int) Character.MAX_VALUE);
+    }
+}
